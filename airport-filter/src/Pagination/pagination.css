@@ -14,3 +14,23 @@
   align-items: center;
   cursor: pointer;
 }
+
+@media (max-Width:1068px) {
+  .pagination-list {
+    margin: 1rem 0;
+    position: relative;
+    right: 6rem;
+    gap: 2px;
+  }
+  .pagination-list-items {
+    border: 1px solid gray;
+    height: 15px;
+    width: 15px;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 10px;
+  }
+}

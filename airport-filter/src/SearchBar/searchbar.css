@@ -38,3 +38,17 @@
 .formBox .inputField input .placeholder {
   font-size: 1rem;
 }
+
+@media (max-width:1068px) {
+  .formBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .formBox .inputField label {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  #radioBtns {
+    font-size: 12px;
+  }
+}

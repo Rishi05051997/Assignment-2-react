@@ -1,17 +1,24 @@
 import React from "react";
 import "./pagination.css";
 
+///// Here we are creating one Pagination Component as Class
 export default class Pagination extends React.Component {
+  ///// Here we are defining one Parameterized constructor 
   constructor(props) {
+    //// Super method for accessing all properties which are coming from parent component i.e.., Table component
     super(props);
+    //// Here we are creating one pager state 
     this.state = { pager: {} };
   }
 
+  /// componentWillMount triggers before the initial render, and the function will only trigger once in the lifespan of a component. So here we called one setPage function and passed this.props.initialPage as a argument to the this.setPage function 
   componentWillMount() {
     if (this.props.items && this.props.items.length) {
       this.setPage(this.props.initialPage);
     }
   }
+
+  /// The componentDidUpdate is particularly useful when an operation needs to happen after the DOM is updated and the update queue is emptied. It's probably most useful on complex renders and state or DOM changes or when you need something to be the absolutely last thing to be executed.
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.items !== prevProps.items) {
@@ -19,8 +26,9 @@ export default class Pagination extends React.Component {
     }
   }
 
+  //// Here we are using setters in a class we are setting how much elements need to be displayed on UI
   setPage(page) {
-    console.log(this.props);
+    
     var items = this.props.items;
     var pager = this.state.pager;
 
@@ -37,10 +45,11 @@ export default class Pagination extends React.Component {
     this.props.onChangePage(pageOfItems);
   }
 
+  //// Here we are using getterss in a class
   getPager(totalItems, currentPage, pageSize) {
     currentPage = currentPage || 1;
 
-    pageSize = pageSize || 10;
+    pageSize = pageSize || 4;
 
     var totalPages = Math.ceil(totalItems / pageSize);
 
