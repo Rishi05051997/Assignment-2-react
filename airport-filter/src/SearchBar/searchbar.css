@@ -1,0 +1,40 @@
+/* .search-input {
+  width: 80vw;
+  height: 2rem;
+  margin: 20px;
+  border: 1px solid gray;
+} */
+.formBox {
+  display: flex;
+  margin: 0 0 1rem 0;
+  
+}
+
+.formBox .inputField{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  
+}
+
+.formBox .inputField label {
+  margin: 0 0 1rem 0;
+  font-size:1.5rem;
+  font-weight:bold;
+  color:black;
+
+}
+
+
+.formBox .inputField input {
+  border-style: unset;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+.checks {
+  color:grey;
+}
+
+.formBox .inputField input .placeholder {
+  font-size: 1rem;
+}

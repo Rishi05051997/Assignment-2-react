@@ -1,0 +1,46 @@
+body{
+  background-color:hsl(0, 0%, 100%);
+}
+.main-container {
+  background-color:#8080800d;
+  margin: 0 4rem;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color:hsl(0, 0%, 100%);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 1rem;
+
+}
+
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container .header {
+  display: flex;
+}
+
+.container .header .head-1 {
+  margin-right: 1rem;
+  font-size: 3rem;
+}
+
+.container .header .head-2 {
+  color:grey;
+  font-size: 3rem;
+}
+.container .formFieldBox {
+  display: flex;
+}
+.container .formFieldBox .inputField{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 1rem 9rem;
+}
+
+/********  Pagination Starting   ********/

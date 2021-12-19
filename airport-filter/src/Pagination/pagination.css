@@ -1,0 +1,16 @@
+.pagination-list {
+  list-style: none;
+  display: inline-flex;
+  gap: 16px;
+}
+
+.pagination-list-items {
+  border: 1px solid gray;
+  height: 25px;
+  width: 25px;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
