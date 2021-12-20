@@ -22,6 +22,7 @@ const SearchBar = props => {
       <div className="inputField checks">
         <label htmlFor="">Type</label>
         <div id="radioBtns">
+          {/* Below one is we called checkHanlderForSmall function  */}
           <input type="radio" onChange={checkHanlderForSmall} name="small" value="small" id="" />Small
           <input type="radio" onChange={checkHanlderForSmall} name="small"  value="medium" id="" />Medium
           <input type="radio" onChange={checkHanlderForSmall} name="small" value="large" id="" />Large
@@ -32,6 +33,7 @@ const SearchBar = props => {
       {/* Below one is text input field here user can give his/her response  */}
       <div className="inputField">
         <label >Type By Search</label>
+        {/* Below one is we called handleSearchTextChange function along with debounce helper function  */}
         <input className="search-input" type="text" placeholder="Search by Name" onChange={debounce(handleSearchTextChange, 2000)}/>
       </div>
     </div>

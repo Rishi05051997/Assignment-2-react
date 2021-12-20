@@ -26,33 +26,44 @@ export default class Pagination extends React.Component {
     }
   }
 
-  //// Here we are using setters in a class we are setting how much elements need to be displayed on UI
+  //// Here we are using setters in a class we are setting how much elements need to be displayed on UI, so inside setPage function we pass page as an argument
   setPage(page) {
-    
+    //// here we are storing whole data which is coming as a array from Table.js file as a props i.e.., items in items varibale
     var items = this.props.items;
+    ///// here we are storing pager state in pager varible with var keyword means its accessible outside the function scope as well
     var pager = this.state.pager;
 
+    ///// page value is less than 1 or page value is more than entire data length then we are returning inital condition
     if (page < 1 || page > pager.totalPages) {
       return;
     }
 
+    ////// Here we are storing getter function i.e.., getPager(1st, 2nd) function which are passing two parameters 1st one array length in integer format, page value inside pager state variable
     pager = this.getPager(items.length, page);
 
+    ////// here we are storing items.slice(1st index, last index); inside pageOfItems as an array format. Slice method() method returns selected elements in an array, as a new array. The slice() method selects from a given start, up to a (not inclusive) given end.The slice() method does not change the original array.
     var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
 
+    ///// here we are storing pager variable state inside pager state
     this.setState({ pager: pager });
 
+    ///// Here we are using lifting the state up concept so we are setting Table.js state i.e.., setpageOfItems as a props i.e.., onChangePage props
     this.props.onChangePage(pageOfItems);
   }
 
-  //// Here we are using getterss in a class
+  //// Here we are using getters in a class, getPager function we passed 3 arguments, i.e.., totalItems, currentPage and pageSize
   getPager(totalItems, currentPage, pageSize) {
+    
+    //// currentPage we stored atleast 1 value either currentPage or 1
     currentPage = currentPage || 1;
 
+    ////  pageSize we stored atleast 1 value either pageSize or 4 for displaying atleast 4 rows on UI
     pageSize = pageSize || 4;
 
+    //// Here we are finding total no of pages by dividing totalItems by pageSize and storing into totalPages variable
     var totalPages = Math.ceil(totalItems / pageSize);
 
+    
     var startPage, endPage;
     if (totalPages <= 10) {
       startPage = 1;
